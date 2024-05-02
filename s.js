@@ -3,104 +3,100 @@ const startButton = document.querySelector('button'); // Get the "Start" button
 const div = document.querySelector('.input-container');
 const p = document.querySelector('.p');
 const body = document.body;
-const music = document.createElement('audio')
+const music = document.createElement('audio');
 const h1 = document.querySelector('.h1');
-const skeletonMeme = document.createElement('audio')
-
-
-
+const skeletonMeme = document.createElement('audio');
 
 music.src = 'f.mp3';
-music.style.display = 'none';
-music.pause();
-
 skeletonMeme.src = 'Berserk skeleton meme (good quality).mp3';
-skeletonMeme.style.display = 'none';
-skeletonMeme.pause();
 
+let ggTyped = false; // This flag determines if 'gg' has been typed
 
+// This function handles button clicks based on the state of `ggTyped`
+function handleButtonClick() {
+  if (ggTyped) {
+    // If 'gg' was already typed, execute this block
+    skeletonMeme.play();
+    skeletonMeme.loop = true;
+    body.style.backgroundImage = "url('skeletons-berserk.gif')";
+    music.pause();
+    h1.style.color = "red";
+    inputElement.style.backgroundImage = "url('skeletons-berserk.gif')";
+    type("Do you really think I care about your sad day?");
+    inputElement.placeholder = "wow man ,wow";
+  } else {
+    inputElement.classList.add('gg');
+    inputElement.placeholder = "Come on, don't run from it, TYPE IT 🙂";
+    console.log("You're getting warmer...");
+    inputElement.value = "";
+    // Remove the 'gg' class after a delay
+    setTimeout(() => {
+      inputElement.classList.remove('gg');
+    }, 1000);
+  }
+}
 
-// Event listener for keyup (when a key is released)
-inputElement.addEventListener('keyup', event => {
-    const inputWord = inputElement.value.toLowerCase(); // Get the lowercase value of the input
+// This function handles keyup events to check for "gg"
+function handleKeyUp() {
+  const inputWord = inputElement.value.toLowerCase(); // Get the lowercase value of the input
 
-    // Check if the input matches "nono"
-    if (inputWord === 'gg') {
-   
-        startButton.addEventListener('click', () => {
-            div.classList.add('movedown');
-            console.log('u get it');
-            p.innerHTML = 'welcome samir, welcome , Welcome, please have a seat.';
-            music.play();
-            inputElement.placeholder ='good boy';
-            inputElement.value = '';
-            setTimeout(() => {
-                type("Happy ..happy birthday to u")},2000);
-                setTimeout(() => {
-                         // Change the background color
-                            body.style.backgroundImage = "url('e.gif')"; // Replace with your preferred color
-                }, 1000)
-        
-                    setTimeout(() => {    
-                        skeletonMeme.play();
-                        skeletonMeme.loop=true;
-                        body.style.backgroundImage = "url('skeletons-berserk.gif')";
-                        music.style.display = 'none';
-                        music.pause();
-                        type('do u think i will let u enjoy this')
-                        h1.style.color = "red";
-                        inputElement.style.backgroundImage = "url('skeletons-berserk.gif')";
-                    },6000)
-                
-            
-        });
-    
-    }else if (inputWord ==! 'gg'){
-        // Event listener for button click
-        startButton.addEventListener('click', () => {
-            // Change background color
-            inputElement.classList.add('gg'); // Add the 'gg' class
+  if (!ggTyped && inputWord === 'gg') {
+    ggTyped = true; // Set the flag to true
+    div.classList.add('movedown');
+    console.log("You got it");
+    p.innerHTML = "Welcome, Samir, welcome, welcome! Please have a seat.";
+    music.play();
+    inputElement.placeholder = "Good boy!";
+    inputElement.value = ''; // Clear the input field
 
-            // Update placeholder text
-            inputElement.placeholder = "come on don't run from it, TYPE IT 🙂";
-            inputElement.value = '';
+    // Further actions for the first time "gg" is typed and button is clicked
+    setTimeout(() => {
+      type("Happy... happy birthday to you!");
+    }, 2000);
 
-            // Add some vibes (you can customize this message)
-            console.log("You're getting warmer...");
+    setTimeout(() => {
+      body.style.backgroundImage = "url('e.gif')"; 
+    }, 1000);
 
-            // Remove the 'gg' class after a delay (adjust the duration as needed)
-            setTimeout(() => {
-                inputElement.classList.remove('gg');
-            }, 1000); // Remove after 1 second (adjust as desired)
-        });
+    setTimeout(() => {    
+      skeletonMeme.play();
+      skeletonMeme.loop = true;
+      body.style.backgroundImage = "url('skeletons-berserk.gif')";
+      music.pause();
+      type("Do you think I will let you enjoy this?");
+      h1.style.color = "red";
+      inputElement.style.backgroundImage = "url('skeletons-berserk.gif')";
+    }, 6000);
 
+    setTimeout(() => {
+      skeletonMeme.pause();
+      skeletonMeme.loop = false;
+      body.style.backgroundImage = "url('sss.gif')";
+      music.play();
+      type("Just kidding! How was your day?");
+      inputElement.placeholder = "Write about your day here";
+      h1.style.color = "rgb(156,49,89)";
+      inputElement.style.backgroundImage = "url('sss.gif')";
+    }, 13000);
+  }
+}
+
+// Set up event listeners only once
+startButton.addEventListener('click', handleButtonClick);
+inputElement.addEventListener('click', handleKeyUp);
+
+// This function types out text with an interval delay for animation
+function type(text) {
+  let i = 0;
+  let typedText = ''; 
+
+  const interval = setInterval(() => {
+    if (i < text.length) {
+      typedText += text[i];
+      h1.innerText = typedText;
+      i++;
+    } else {
+      clearInterval(interval); // Clear the interval when done
     }
-});
-
-
-
-
-    
-
-function type(text){
-    
-    const speach = text;
-
-
-    let i = 0;
-    let firstLetter = ''; // Initialize firstLetter variable
- 
-        const interval = setInterval(() => {
-
-                h1.innerHTML  =firstLetter
-
-        
-            if (speach[i] !== undefined && speach[i] !== '\r') {
-                firstLetter = firstLetter + speach[i];
-                
-                i++;
-            } else {
-                clearInterval(interval);
-            }
-        },50)
+  }, 50); // Adjust typing speed as needed
 }
