@@ -21,9 +21,10 @@ function handleButtonClick() {
     body.style.backgroundImage = "url('skeletons-berserk.gif')";
     music.pause();
     h1.style.color = "red";
-    inputElement.style.backgroundImage = "url('skeletons-berserk.gif')";
+    inputElement.style.backgroundColor = "rgb(123,215,55)";
     type("Do you really think I care about your sad day?");
     inputElement.placeholder = "wow man ,wow";
+    startButton.innerHTML = 'u even click me'
   } else {
     inputElement.classList.add('gg');
     inputElement.placeholder = "Come on, don't run from it, TYPE IT 🙂";
@@ -83,7 +84,7 @@ function handleKeyUp() {
 
 // Set up event listeners only once
 startButton.addEventListener('click', handleButtonClick);
-inputElement.addEventListener('click', handleKeyUp);
+inputElement.addEventListener('keyup', handleKeyUp);
 
 // This function types out text with an interval delay for animation
 function type(text) {
