@@ -76,7 +76,7 @@ function handleKeyUp() {
       p.style.color = "white";
       h1.style.color = "red";
       inputElement.style.backgroundImage = "url('skeletons-berserk.gif')";
-    }, 6000);
+    }, 8000);
 
     setTimeout(() => {
       skeletonMeme.pause();
@@ -89,11 +89,11 @@ function handleKeyUp() {
       inputElement.placeholder = "Write about your day here";
       h1.style.color = "rgb(156,49,89)";
       inputElement.style.backgroundImage = "url('sss.gif')";
-    }, 13000);
+    }, 15000);
  // Disable the input when the startButton is clicked
   // Set a timeout to re-enable the input after 10 seconds
 };}
-setTimeout(() =>{enableInput();},13000);
+setTimeout(() =>{enableInput();},16000);
 startButton.addEventListener('click', handleButtonClick);
 inputElement.addEventListener('keyup', handleKeyUp);
 
