@@ -6,11 +6,22 @@ const body = document.body;
 const music = document.createElement('audio');
 const h1 = document.querySelector('.h1');
 const skeletonMeme = document.createElement('audio');
+const info = document.querySelector('.info');
+const hentai = document.createElement('audio');
 
 music.src = 'f.mp3';
 skeletonMeme.src = 'Berserk skeleton meme (good quality).mp3';
-
+hentai.src = 'yamede-kudasai-aaaaaahhh.mp3'
+hentai.pause();
 let ggTyped = false; // This flag determines if 'gg' has been typed
+
+function disableInput() {
+  inputElement.disabled = true; // Disable typing
+}
+function enableInput() {
+inputElement.disabled = false; // Disable typing
+}
+
 
 // This function handles button clicks based on the state of `ggTyped`
 function handleButtonClick() {
@@ -28,10 +39,48 @@ function handleButtonClick() {
     startButton.style.backgroundColor = "rgba(175, 44, 44, 0.262)";
     inputElement.value = "";
     p.innerHTML = "we been togther for years..am dissponting "
+    setTimeout(()=>{
+      type2(`first let take that input from u , u do not need it , and change the background 
+      then the button, u do not need it , all what going to left is u and u only `);
+     
+},4000)
+
+  setTimeout(() => {
+    inputElement.remove(); // Remove the input element
+       // Pause the music
+  }, 8000); // After 1 second
+
+  setTimeout(() => {
+    skeletonMeme.pause();
+    
+  }, 9000); // 1 second after the previous action (total of 2 seconds)
+
+  setTimeout(() => {
+      startButton.remove(); // Remove the start button
+  }, 10000); // Another 1 second delay (total of 3 seconds)
+
+  setTimeout(() => {
+      h1.remove(); // Remove the header
+  }, 11000); // Total of 4 seconds
+
+  setTimeout(() => {
+     
+      p.remove(); // Remove the paragraph
+  }, 12000); // Total of 5 seconds
+
+  setTimeout(() => {
+      body.style.backgroundImage = "url('samir.png')"; // Change the background
+  }, 13000); // Total of 6 seconds
+  setTimeout(() => {
+    info.innerText = '' // Change the background
+}, 14000); // Total of 6 seconds
+
+
+
 
   } else {
     inputElement.classList.add('gg');
-    inputElement.placeholder = "Come on, don't run from it, TYPE IT 🙂";
+    inputElement.placeholder = "Come on, don't run from it, TYPE IT 🙂(i can go gay for u)";
     console.log("You're getting warmer...");
     inputElement.value = "";
     // Remove the 'gg' class after a delay
@@ -46,7 +95,7 @@ function handleButtonClick() {
 function handleKeyUp() {
   const inputWord = inputElement.value.toLowerCase(); // Get the lowercase value of the input
 
-  if (!ggTyped && inputWord === 'gg') {
+  if (!ggTyped && inputWord === 'i can go gay for u') {
     ggTyped = true; // Set the flag to true
     div.classList.add('movedown');
     console.log("You got it");
@@ -76,6 +125,7 @@ function handleKeyUp() {
       p.style.color = "white";
       h1.style.color = "red";
       inputElement.style.backgroundImage = "url('skeletons-berserk.gif')";
+      startButton.innerHTML = 'wow!';
     }, 8000);
 
     setTimeout(() => {
@@ -84,7 +134,7 @@ function handleKeyUp() {
       body.style.backgroundImage = "url('sss.gif')";
       music.play();
       type("Just kidding! How was your day?");
-      p.innerHTML = "come on write am no joking becase i do care about your day i do";
+      p.innerHTML = "come on write man ,  am not joking because i do care about your day, I DO";
       p.style.color = "black";
       inputElement.placeholder = "Write about your day here";
       h1.style.color = "rgb(156,49,89)";
@@ -93,7 +143,7 @@ function handleKeyUp() {
  // Disable the input when the startButton is clicked
   // Set a timeout to re-enable the input after 10 seconds
 };}
-setTimeout(() =>{enableInput();},16000);
+setTimeout(() =>{enableInput();},14000);
 startButton.addEventListener('click', handleButtonClick);
 inputElement.addEventListener('keyup', handleKeyUp);
 
@@ -112,14 +162,26 @@ function type(text) {
     }
   }, 50); // Adjust typing speed as needed
 }
+function type2(text) {
+  let i = 0;
+  let typedText = ''; 
 
-
-
-function disableInput() {
-    inputElement.disabled = true; // Disable typing
+  const interval = setInterval(() => {
+    if (i < text.length) {
+      typedText += text[i];
+      info.innerText = typedText;
+      i++;
+    } else {
+      clearInterval(interval); // Clear the interval when done
+    }
+  }, 50); // Adjust typing speed as needed
 }
-function enableInput() {
-  inputElement.disabled = false; // Disable typing
-}
 
 
+
+setTimeout(()=> {
+ hentai.play();
+ hentai.loop = true;
+},
+30000
+)
