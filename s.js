@@ -3,6 +3,20 @@ const startButton = document.querySelector('button'); // Get the "Start" button
 const div = document.querySelector('.input-container');
 const p = document.querySelector('.p');
 const body = document.body;
+const music = document.createElement('audio')
+const h1 = document.querySelector('.h1');
+const skeletonMeme = document.createElement('audio')
+
+
+
+
+music.src = 'f.mp3';
+music.style.display = 'none';
+music.pause();
+
+skeletonMeme.src = 'Berserk skeleton meme (good quality).mp3';
+skeletonMeme.style.display = 'none';
+skeletonMeme.pause();
 
 
 
@@ -16,15 +30,31 @@ inputElement.addEventListener('keyup', event => {
         startButton.addEventListener('click', () => {
             div.classList.add('movedown');
             console.log('u get it');
-            p.innerHTML = 'welcome samir , happy birthday to u';
-            inputElement.style.backgroundImage = "url('e.gif')";
+            p.innerHTML = 'welcome samir, welcome , Welcome, please have a seat.';
+            music.play();
+            inputElement.placeholder ='good boy';
+            inputElement.value = '';
+            setTimeout(() => {
+                type("Happy ..happy birthday to u")},2000);
+                setTimeout(() => {
+                         // Change the background color
+                            body.style.backgroundImage = "url('e.gif')"; // Replace with your preferred color
+                }, 1000)
+        
+                    setTimeout(() => {    
+                        skeletonMeme.play();
+                        skeletonMeme.loop=true;
+                        body.style.backgroundImage = "url('skeletons-berserk.gif')";
+                        music.style.display = 'none';
+                        music.pause();
+                        type('do u think i will let u enjoy this')
+                        h1.style.color = "red";
+                        inputElement.style.backgroundImage = "url('skeletons-berserk.gif')";
+                    },6000)
+                
+            
         });
-        setTimeout(() => {
-                 // Change the background color
-                    body.style.backgroundImage = "url('e.gif')"; // Replace with your preferred color
-        }, 1000)
-
-
+    
     }else if (inputWord ==! 'gg'){
         // Event listener for button click
         startButton.addEventListener('click', () => {
@@ -48,4 +78,29 @@ inputElement.addEventListener('keyup', event => {
 });
 
 
-// Get a reference to the <body> element
+
+
+    
+
+function type(text){
+    
+    const speach = text;
+
+
+    let i = 0;
+    let firstLetter = ''; // Initialize firstLetter variable
+ 
+        const interval = setInterval(() => {
+
+                h1.innerHTML  =firstLetter
+
+        
+            if (speach[i] !== undefined && speach[i] !== '\r') {
+                firstLetter = firstLetter + speach[i];
+                
+                i++;
+            } else {
+                clearInterval(interval);
+            }
+        },50)
+}
