@@ -1,6 +1,7 @@
 const inputElement = document.querySelector('.input'); // Get the input element by its class name
 const startButton = document.querySelector('button'); // Get the "Start" button
 const div = document.querySelector('.input-container');
+const p = document.querySelector('.p');
 const body = document.body;
 
 
@@ -11,10 +12,12 @@ inputElement.addEventListener('keyup', event => {
 
     // Check if the input matches "nono"
     if (inputWord === 'gg') {
-
+   
         startButton.addEventListener('click', () => {
-            div.classList.add('movedown')
-            console.log('u get it')
+            div.classList.add('movedown');
+            console.log('u get it');
+            p.innerHTML = 'welcome samir , happy birthday to u';
+            inputElement.style.backgroundImage = "url('e.gif')";
         });
         setTimeout(() => {
                  // Change the background color
