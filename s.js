@@ -41,41 +41,47 @@ function handleButtonClick() {
     p.innerHTML = "we been togther for years..am dissponting "
     setTimeout(()=>{
       type2(`first let take that input from u , u do not need it , and change the background 
-      then the button, u do not need it , all what going to left is u and u only `);
+      then the button, u do not need it , all what going to left is u and u only , bitch  `);
+      disableInput();
+      startButton.disabled();
      
-},4000)
+},5000)
 
   setTimeout(() => {
     inputElement.remove(); // Remove the input element
        // Pause the music
-  }, 8000); // After 1 second
+  },9000); // After 1 second
 
   setTimeout(() => {
     skeletonMeme.pause();
     
-  }, 9000); // 1 second after the previous action (total of 2 seconds)
+  }, 10000); // 1 second after the previous action (total of 2 seconds)
 
   setTimeout(() => {
       startButton.remove(); // Remove the start button
-  }, 10000); // Another 1 second delay (total of 3 seconds)
+  }, 11000); // Another 1 second delay (total of 3 seconds)
 
   setTimeout(() => {
       h1.remove(); // Remove the header
-  }, 11000); // Total of 4 seconds
+  }, 12000); // Total of 4 seconds
 
   setTimeout(() => {
      
       p.remove(); // Remove the paragraph
-  }, 12000); // Total of 5 seconds
+  }, 13000); // Total of 5 seconds
 
   setTimeout(() => {
       body.style.backgroundImage = "url('samir.png')"; // Change the background
-  }, 13000); // Total of 6 seconds
+  }, 14000); // Total of 6 seconds
   setTimeout(() => {
     info.innerText = '' // Change the background
-}, 14000); // Total of 6 seconds
-
-
+}, 15000); // Total of 6 seconds
+setTimeout(()=> {
+  hentai.play();
+  hentai.loop = true;
+ },
+ 15000
+ )
 
 
   } else {
@@ -178,10 +184,3 @@ function type2(text) {
 }
 
 
-
-setTimeout(()=> {
- hentai.play();
- hentai.loop = true;
-},
-200000
-)
