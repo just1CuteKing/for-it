@@ -22,11 +22,12 @@ function handleButtonClick() {
     music.pause();
     h1.style.color = "red";
     inputElement.style.backgroundImage ="url('skeletons-berserk.gif')";
-    type("Do you really think I care about your sad day?");
+    type("Do you really think I care about your sad damn day?");
     inputElement.placeholder = "wow man ,wow";
-    startButton.innerHTML = 'u even click me'
+    startButton.innerHTML = 'u even click me';
+    startButton.style.backgroundColor = "rgba(175, 44, 44, 0.262)";
     inputElement.value = "";
-    p.innerHTML = "we been togther for years and u still wait something wow "
+    p.innerHTML = "we been togther for years..am dissponting "
 
   } else {
     inputElement.classList.add('gg');
@@ -71,6 +72,8 @@ function handleKeyUp() {
       body.style.backgroundImage = "url('skeletons-berserk.gif')";
       music.pause();
       type("Do you think I will let you enjoy this?");
+      p.innerHTML = "ooo how kawayyy 😖";
+      p.style.color = "white";
       h1.style.color = "red";
       inputElement.style.backgroundImage = "url('skeletons-berserk.gif')";
     }, 6000);
@@ -81,6 +84,8 @@ function handleKeyUp() {
       body.style.backgroundImage = "url('sss.gif')";
       music.play();
       type("Just kidding! How was your day?");
+      p.innerHTML = "come on write am no joking becase i do care about your day i do";
+      p.style.color = "black";
       inputElement.placeholder = "Write about your day here";
       h1.style.color = "rgb(156,49,89)";
       inputElement.style.backgroundImage = "url('sss.gif')";
