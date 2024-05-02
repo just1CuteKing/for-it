@@ -145,6 +145,7 @@ function handleKeyUp() {
       inputElement.placeholder = "Write about your day here";
       h1.style.color = "rgb(156,49,89)";
       inputElement.style.backgroundImage = "url('sss.gif')";
+      startButton.innerHTML = "let me know pls"
     }, 15000);
  // Disable the input when the startButton is clicked
   // Set a timeout to re-enable the input after 10 seconds
