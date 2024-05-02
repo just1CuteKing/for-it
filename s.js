@@ -25,6 +25,7 @@ function handleButtonClick() {
     type("Do you really think I care about your sad day?");
     inputElement.placeholder = "wow man ,wow";
     startButton.innerHTML = 'u even click me'
+    inputElement.value = "";
   } else {
     inputElement.classList.add('gg');
     inputElement.placeholder = "Come on, don't run from it, TYPE IT 🙂";
