@@ -50,37 +50,38 @@ function handleButtonClick() {
   setTimeout(() => {
     inputElement.remove(); // Remove the input element
        // Pause the music
-  },9000); // After 1 second
+  },10000); // After 1 second
 
   setTimeout(() => {
-    skeletonMeme.pause();
+    p.remove(); // Remove the paragraph
     
-  }, 10000); // 1 second after the previous action (total of 2 seconds)
+  }, 11000); // 1 second after the previous action (total of 2 seconds)
 
   setTimeout(() => {
       startButton.remove(); // Remove the start button
-  }, 11000); // Another 1 second delay (total of 3 seconds)
+  }, 12000); // Another 1 second delay (total of 3 seconds)
 
   setTimeout(() => {
       h1.remove(); // Remove the header
-  }, 12000); // Total of 4 seconds
+  }, 13000); // Total of 4 seconds
 
   setTimeout(() => {
-     
-      p.remove(); // Remove the paragraph
-  }, 13000); // Total of 5 seconds
+    skeletonMeme.pause();
 
-  setTimeout(() => {
-      body.style.backgroundImage = "url('samir.png')"; // Change the background
-  }, 14000); // Total of 6 seconds
+  }, 14000); // Total of 5 seconds
+
   setTimeout(() => {
     info.innerText = '' // Change the background
-}, 15000); // Total of 6 seconds
+
+  }, 15000); // Total of 6 seconds
+  setTimeout(() => {
+    body.style.backgroundImage = "url('samir.png')"; // Change the background
+}, 16000); // Total of 6 seconds
 setTimeout(()=> {
   hentai.play();
   hentai.loop = true;
  },
- 15000
+ 17000
  )
 
 
