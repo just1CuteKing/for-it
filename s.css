@@ -6,8 +6,14 @@ body {
     margin: 0;
     background-color: rgb(43, 42, 39);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.e{
 
+    background-image: url("e.gif");
+    background-repeat: repeat;
+}
 .input-container {
     text-align: center;
 }
@@ -17,7 +23,7 @@ fieldset {
     padding: 5px;
     margin: 1px;
     width:500px;
-    height: 200px;
+    height: 150px;
 }
 
 legend {
@@ -62,4 +68,17 @@ button {
 @keyframes gg{
     from {background-color: red;}
     to{ background-color: rgba(175, 44, 44, 0.262);}
+}
+
+.input-container.moved-down {
+    transform: translateY(100vh);
+}
+
+/* Animation for input field */
+.input.moved-down {
+    transform: translateY(100px);
+}
+.movedown {
+    margin-top: 40%;
+    transition: all 1s;
 }
