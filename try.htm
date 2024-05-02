@@ -2,67 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Type and Click Logic</title>
-    <style>
-        .input-container {
-            transition: all 0.5s ease; /* Smooth transition for CSS changes */
-        }
-        .movedown {
-            transform: translateY(50px); /* Example transform for moving down */
-        }
-    </style>
+    <title>Disable Input for 10 Seconds</title>
     <script>
-        let ggTyped = false;
 
-        function handleButtonClick() {
-            const div = document.querySelector('.input-container');
-            const p = document.querySelector('.p');
-            const body = document.body;
-            const h1 = document.querySelector('.h1');
-            const inputElement = document.querySelector('.input');
-
-            if (!ggTyped && inputElement.value.toLowerCase() === 'gg') {
-                ggTyped = true; // Update the flag
-                div.classList.add('movedown');
-                console.log('You got it!');
-                p.innerHTML = 'Welcome, Samir!';
-                h1.innerHTML = "Happy Birthday!";
-                inputElement.value = ''; // Reset input
-                // Additional logic for music and background changes
-            } else if (ggTyped) {
-                console.log('Second click');
-                p.innerText = "Enjoy your day!";
-                // Additional logic for secondary clicks
-            } else {
-                console.log("You're getting warmer...");
-                inputElement.placeholder = "Come on, type 'gg'";
-            }
-        }
-
-        function handleKeyUp(event) {
-            const inputElement = document.querySelector('.input');
-            const inputWord = inputElement.value.toLowerCase();
-            
-            if (inputWord === 'gg') {
-                ggTyped = true; // Update flag if "gg" is typed
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const startButton = document.querySelector('button');
-            const inputElement = document.querySelector('.input');
-            
-            startButton.addEventListener('click', handleButtonClick);
-            inputElement.addEventListener('keyup', handleKeyUp);
-        });
     </script>
 </head>
 <body>
-    <div class="input-container">
-        <h1 class="h1">Type and Click</h1>
-        <input type="text" class="input" placeholder="Type something here">
-        <button>Start</button>
-        <p class="p"></p>
+    <div>
+        <h1>Disable Input for 10 Seconds</h1>
+        <input type="text" placeholder="Try typing here"> <!-- Initially enabled -->
+        <button>Disable Input</button> <!-- Button to trigger the disable action -->
+        <p class="message">Input is enabled.</p> <!-- Message to indicate the state -->
     </div>
 </body>
 </html>

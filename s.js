@@ -21,11 +21,13 @@ function handleButtonClick() {
     body.style.backgroundImage = "url('skeletons-berserk.gif')";
     music.pause();
     h1.style.color = "red";
-    inputElement.style.backgroundColor = "rgb(123,215,55)";
+    inputElement.style.backgroundImage ="url('skeletons-berserk.gif')";
     type("Do you really think I care about your sad day?");
     inputElement.placeholder = "wow man ,wow";
     startButton.innerHTML = 'u even click me'
     inputElement.value = "";
+    p.innerHTML = "we been togther for years and u still wait something wow "
+
   } else {
     inputElement.classList.add('gg');
     inputElement.placeholder = "Come on, don't run from it, TYPE IT 🙂";
@@ -37,6 +39,7 @@ function handleButtonClick() {
     }, 1000);
   }
 }
+
 
 // This function handles keyup events to check for "gg"
 function handleKeyUp() {
@@ -50,7 +53,9 @@ function handleKeyUp() {
     music.play();
     inputElement.placeholder = "Good boy!";
     inputElement.value = ''; // Clear the input field
-
+    setTimeout(() =>{
+      disableInput();
+    },1000);
     // Further actions for the first time "gg" is typed and button is clicked
     setTimeout(() => {
       type("Happy... happy birthday to you!");
@@ -80,10 +85,10 @@ function handleKeyUp() {
       h1.style.color = "rgb(156,49,89)";
       inputElement.style.backgroundImage = "url('sss.gif')";
     }, 13000);
-  }
-}
-
-// Set up event listeners only once
+ // Disable the input when the startButton is clicked
+  // Set a timeout to re-enable the input after 10 seconds
+};}
+setTimeout(() =>{enableInput();},13000);
 startButton.addEventListener('click', handleButtonClick);
 inputElement.addEventListener('keyup', handleKeyUp);
 
@@ -102,3 +107,14 @@ function type(text) {
     }
   }, 50); // Adjust typing speed as needed
 }
+
+
+
+function disableInput() {
+    inputElement.disabled = true; // Disable typing
+}
+function enableInput() {
+  inputElement.disabled = false; // Disable typing
+}
+
+
