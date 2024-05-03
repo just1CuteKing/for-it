@@ -87,7 +87,7 @@ setTimeout(()=> {
 
   } else {
     inputElement.classList.add('gg');
-    inputElement.placeholder = "Come on, don't run from it, TYPE IT 🙂(i can go gay for u)";
+    inputElement.placeholder = "Come on, don't run from it, TYPE IT 🙂(am a bitch)";
     console.log("You're getting warmer...");
     inputElement.value = "";
     // Remove the 'gg' class after a delay
@@ -102,7 +102,7 @@ setTimeout(()=> {
 function handleKeyUp() {
   const inputWord = inputElement.value.toLowerCase(); // Get the lowercase value of the input
 
-  if (!ggTyped && inputWord === 'i can go gay for u') {
+  if (!ggTyped && inputWord === 'am a bitch') {
     ggTyped = true; // Set the flag to true
     div.classList.add('movedown');
     console.log("You got it");
